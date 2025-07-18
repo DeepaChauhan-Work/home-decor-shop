@@ -1,0 +1,90 @@
+<!-- Hero Banner -->
+<section class="flex flex-col justify-center items-center text-center text-white min-h-[60vh] bg-gradient-to-r from-blue-700 to-indigo-800">
+  <div class="hero-content">
+    <h1 class="text-4xl md:text-5xl font-bold mb-4">Transform Your Space</h1>
+    <p class="text-lg md:text-xl mb-6">With Our Home Decor Products &amp; Professional Interior Services</p>
+    <div>
+      <a routerLink="/products" class="btn btn-primary btn-lg me-2 inline-block bg-white text-blue-700 font-semibold px-6 py-3 rounded shadow hover:bg-blue-100 mr-2">Shop Products</a>
+      <a routerLink="/services" class="inline-block border border-white text-white font-semibold px-6 py-3 rounded hover:bg-white hover:text-blue-700 transition">Explore Services</a>
+    </div>
+  </div>
+</section>
+
+<!-- What we do -->
+<section class="py-16 bg-white">
+  <div class="container mx-auto px-4">
+    <h2 class="text-3xl md:text-4xl font-extrabold text-blue-800 mb-4 text-center">What We Do</h2>
+    <p class="max-w-2xl mx-auto text-lg text-gray-600">
+      Unique home decor, stylish furniture, custom curtains, and professional interior services to make your space truly yours.
+    </p>
+    <div class="mt-8 flex flex-col md:flex-row justify-center gap-8">
+      <div class="flex-1 bg-blue-50 rounded-lg p-6 shadow hover:shadow-lg transition">
+        <h3 class="text-xl font-semibold text-blue-700 mb-2">Home Decor</h3>
+        <p class="text-gray-500">Curated pieces to add personality and warmth to every room.</p>
+      </div>
+      <div class="flex-1 bg-blue-50 rounded-lg p-6 shadow hover:shadow-lg transition">
+        <h3 class="text-xl font-semibold text-blue-700 mb-2">Furniture</h3>
+        <p class="text-gray-500">Modern, comfortable, and functional furniture for every style.</p>
+      </div>
+      <div class="flex-1 bg-blue-50 rounded-lg p-6 shadow hover:shadow-lg transition">
+        <h3 class="text-xl font-semibold text-blue-700 mb-2">Custom Curtains</h3>
+        <p class="text-gray-500">Tailored window treatments to complement your interiors.</p>
+      </div>
+      <div class="flex-1 bg-blue-50 rounded-lg p-6 shadow hover:shadow-lg transition">
+        <h3 class="text-xl font-semibold text-blue-700 mb-2">Interior Services</h3>
+        <p class="text-gray-500">Expert design and consultation to bring your vision to life.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Featured Products -->
+<section class="py-16 bg-gradient-to-b from-gray-50 to-white">
+  <div class="container mx-auto px-4">
+    <h3 class="text-center text-3xl font-extrabold text-blue-800 mb-10 tracking-tight">Featured Products</h3>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <div *ngFor="let product of featuredProducts" class="bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 flex flex-col overflow-hidden">
+        <img [src]="product.imageUrl" class="object-cover w-full h-60" alt="{{product.name}}">
+        <div class="p-6 flex-1 flex flex-col justify-between text-center">
+          <div>
+            <h5 class="text-xl font-semibold mb-2 text-blue-900">{{product.name}}</h5>
+            <p class="text-blue-700 font-bold text-lg mb-4">${{product.price}}</p>
+          </div>
+          <a [routerLink]="['/products', product.id]" class="inline-block border border-blue-700 text-blue-700 px-5 py-2 rounded-lg hover:bg-blue-700 hover:text-white transition font-medium mt-2">View Details</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Recent Project -->
+<section class="py-16 bg-white">
+  <div class="container mx-auto px-4">
+    <div class="max-w-4xl mx-auto bg-gradient-to-r from-blue-50 to-indigo-50 rounded-2xl shadow-lg p-8 flex flex-col items-center">
+      <h3 class="text-3xl font-extrabold text-blue-800 mb-6">Recent Interior Project</h3>
+      <img src="assets/project.jpg" class="rounded-xl shadow-lg mb-6 w-full max-w-2xl object-cover" alt="Recent Project">
+      <p class="text-lg text-gray-600">Elegant living room redesign blending modern and classic elements.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Testimonials -->
+<section class="py-16 bg-gradient-to-b from-gray-50 to-white">
+  <div class="container mx-auto px-4">
+    <h3 class="text-center text-3xl font-extrabold text-blue-800 mb-10 tracking-tight">Customer Testimonials</h3>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <div *ngFor="let t of testimonials" class="bg-white rounded-2xl shadow-lg p-8 flex flex-col justify-between border-t-4 border-blue-700">
+        <p class="italic text-gray-700 mb-6 text-lg">"{{t.text}}"</p>
+        <div class="text-right font-bold text-blue-700 text-base">- {{t.customer}}</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Contact CTA -->
+<section class="py-16 bg-gradient-to-r from-blue-700 to-indigo-800 text-white text-center">
+  <div class="container mx-auto px-4">
+    <h4 class="text-3xl font-extrabold mb-6 tracking-tight">Ready to transform your space?</h4>
+    <a routerLink="/contact" class="inline-block bg-white text-blue-700 font-semibold px-10 py-4 rounded-xl shadow-lg hover:bg-blue-100 hover:text-blue-900 transition text-lg mt-3">Book a Free Consultation</a>
+  </div>
+</section>

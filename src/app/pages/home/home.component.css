@@ -1,0 +1,32 @@
+.hero {
+  background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('/assets/hero-banner.jpg') no-repeat center center/cover;
+  height: 70vh;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.hero-content {
+  max-width: 700px;
+  padding: 0 20px;
+}
+
+.price {
+  font-size: 1.2rem;
+  color: #007bff;
+  font-weight: 500;
+}
+
+section h2,
+section h3,
+section h4 {
+  margin-bottom: 1rem;
+}
+
+.card img {
+  max-height: 200px;
+  object-fit: cover;
+  border-bottom: 1px solid #eee;
+}

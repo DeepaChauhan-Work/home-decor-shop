@@ -6,7 +6,7 @@
     "indexes": "firestore.indexes.json"
   },
   "hosting": {
-    "public": "dist/home-decor-shop",
+    "public": "dist/home-decor-shop/browser",
     "ignore": [
       "firebase.json",
       "**/.*",

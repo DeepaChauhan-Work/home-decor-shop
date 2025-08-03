@@ -40,8 +40,8 @@ export class CartComponent implements OnInit {
 
   updateTotals() {
   this.originalPrice = this.transferService.calculateTotal();
-  this.tax = this.originalPrice * 12 / 100;
-  this.totalPrice = this.originalPrice + this.tax;
+  //this.tax = this.originalPrice * 12 / 100;
+  this.totalPrice = this.originalPrice;
 }
 
 PlaceOrder(){

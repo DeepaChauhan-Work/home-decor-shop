@@ -1,0 +1,171 @@
+
+    <div id="main">
+        <div id="extra" class="lg:h-36 h-24 bg-white w-full"></div>
+    </div>
+    <div id="product" class="w-full xl:px-20 md:px-10 px-5 flex mt-5 xl:flex-row flex-col">
+        <div id="product-image" class="xl:h-[80vh] md:h-[60vh] sm:h-[50vh] h[40vh] xl:w-3/5">
+            <img src="https://images.unsplash.com/photo-1602872030490-4a484a7b3ba6?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                class="h-full w-full" alt="">
+        </div>
+        <div id="product-contant" class="xl:flex-1 xl:p-10 p-5 flex flex-col justify-start gap-3">
+            <div>
+                <h1 class="text-2xl font-bold tracking-widest uppercase">{{productName}}</h1>
+                <p class="uppercase tracking-widest font-semibold">Material: {{material}} </p>
+            </div>
+            <div id="amount" class="text-2xl font-bold tracking-widest uppercase">&#8377; {{price | number:'1.0-0' }}</div>
+            <div class="flex justify-left xl:gap-0 gap-2">
+                <!-- <div>
+                   
+                    <button onclick="decreaseQty()" type="button"
+                        class="bg-black text-white sm:px-4 px-3 py-2 rounded cursor-pointer">-</button>
+                    
+                    <input type="number" value="1" min="1" id="quantity"
+                        class="text-center border border-gray-300 rounded py-2 sm:px-4 px-3 sm:w-10 w-8 no-spinner">
+                    
+                    <button onclick="increaseQty()" type="button" class="bg-black text-white sm:px-4 px-3 py-2 rounded cursor-pointer">+</button>
+                </div> -->
+                <button type="button" (click)="AddToCart()"
+                    class="bg-black text-white uppercase py-2 xl:px-14 md:px-10 px-8 w-fit sm:tracking-widest cursor-pointer">Add to
+                    cart</button>
+            </div>
+        </div>
+    </div>
+    <div id="info"
+        class="flex flex-col justify-center items-center gap-5 text-center py-10 xl:px-40 lg:px-30 md:px-20 sm:px-10 px-5  xl:py-20 md:p-10 p-5 tracking-wide text-lg text-gray-700">
+        <p>{{description}}</p>
+        <p *ngIf="customizable">Customization available. For inquiries, contact our Concierge at +91 8072703946 or write to us at
+            <a href="mailto:hello@homespacedesigns.in" class="text-blue-600 hover:underline text-sm">{{email}}</a></p>
+        <!-- <p class="tracking-wider uppercase font-semibold">Share this product</p>
+        <div id="social-media" class="flex gap-3">
+            <a href="" class="text-2xl"><i class="fa-brands fa-square-instagram"></i></a>
+            <a href="" class="text-2xl"><i class="fa-brands fa-facebook"></i></a>
+            <a href="" class="text-2xl"><i class="fa-brands fa-square-x-twitter"></i></a>
+        </div> -->
+    </div>
+    <div id="more-info" class=" py-10 xl:px-20 md:px-10 px-5 flex justify-around xl:gap-20 gap-10 flex-col lg:flex-row">
+        <div class="flex flex-col gap-5 flex-1">
+            <h3 class="uppercase tracking-wider text-xl font-semibold">Product Specifications</h3>
+            <div class="flex-col flex gap-2">
+                <h4 class="text-lg uppercase tracking-wider">Dimensions</h4>
+                <div class="text-gray-700 text-sm">
+                    <p>Height {{height}} cm</p>
+                    <p>Width {{width}} cm</p>
+                </div>
+            </div>
+            <div class="flex-col flex gap-2">
+                <h4 class="text-lg uppercase tracking-wider">Product Type</h4>
+                <div class="text-gray-700 text-sm">
+                    <p>{{catogary}}</p>
+                </div>
+            </div>
+        </div>
+        <div class="flex flex-col gap-5 flex-1">
+            <h3 class="uppercase tracking-wider text-xl font-semibold">Delivery Information</h3>
+            
+            <div class="flex-col flex gap-2">
+                <h4 class="text-lg uppercase tracking-wider">RETURNS</h4>
+                <ul class="flex flex-col gap-1 list-disc pl-5 text-gray-700">
+                    <li>We accept returns within 7 days of delivery for eligible items.</li>
+                    <li>Products must be unused, in original packaging, and accompanied by a valid proof of purchase.</li>
+                    <li>Return shipping charges may apply.</li>
+                </ul>
+            </div>
+            <div class="flex-col flex gap-2">
+                <h4 class="text-lg uppercase tracking-wider">PAYMENT MODE</h4>
+                <div class="text-gray-700 text-sm">
+                    <ul class="flex flex-col gap-1 list-disc pl-5">
+                        <li>We accept the following payment methods:</li>
+                            <li>✔ UPI</li>
+                            <li>✔ Credit/Debit Cards</li>
+                            <li>✔ Net Banking</li>
+                            <li>✔ Bank Transfer</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="flex flex-col gap-5 flex-1">
+            <h3 class="uppercase tracking-wider text-xl font-semibold">Shipping Policy</h3>
+            <div class="flex-col flex gap-2">
+                <h4 class="text-lg uppercase tracking-wider">Shipping cost</h4>
+                <ul class="flex flex-col gap-1 list-disc pl-5 text-gray-700">
+                    <li>If the value is below 25k (charges applicable depends on the location ) within  Chennai for orders above ₹25,000. no charges.</li>
+                    <li>A standard shipping fee of ₹1999 is applicable for other orders.</li>
+   
+                </ul>
+            </div>
+            <div class="flex-col flex gap-2">
+                <h4 class="text-lg uppercase tracking-wider">Shipping Time</h4>
+                <ul class="flex flex-col gap-1 list-disc pl-5 text-gray-700">
+                    <li>We dispatch all in-stock items within 2–3 business days.</li>
+                    <li>Delivery within Chennai: 3–5 business days</li>
+                </ul>
+            </div>
+            <!-- <div class="flex-col flex gap-2">
+                <h4 class="text-lg uppercase tracking-wider">International Orders:</h4>
+                <div class="text-gray-700 text-sm">
+                    <ul class="flex flex-col gap-1 list-disc pl-5">
+                        <li>Shipping costs may vary depending on volume of item purchased, as well as method and
+                            location of delivery</li>
+                        <li>To obtain a shipping quote, click on Request More Information and provide us your details.
+                            Within 48 hours, you will receive a shipping quote via email for your approval.</li>
+                        <li>International Orders are shipped on a DDU (Delivery Duty Unpaid) basis</li>
+                        <li>Customs duties may apply to international purchases</li>
+                    </ul>
+                </div>
+            </div> -->
+        </div>
+    </div>
+    <!-- <div id="similar-products" class=" py-10 flex flex-col items-center justify-center">
+        <h1 class="tracking-widest uppercase text-2xl font-semibold mb-10">Similar products</h1>
+        <div class="flex flex-wrap lg:gap-20 gap-10 justify-center">
+            
+            <div id="card-scroll-product" class="relative w-80">
+                <div class="h-56 overflow-hidden rounded-md w-full">
+                    <img src="https://images.unsplash.com/photo-1493663284031-b7e3aefcae8e?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                        class="w-full h-full object-cover" alt="furniture" />
+                </div>
+                <div id="card-contant flex flex-col justify-between">
+                    <div class="flex justify-between my-1">
+                        <p id="item-name">Tesera Centre Table</p>
+                        <div id="amount">&#8377; 283,200.00</div>
+                    </div>
+                    <div class="my-1 text-gray-700 text-sm">By Project 810</div>
+                    <div class="bg-black text-white px-2 w-fit my-1 text-sm">CUSTOMIZABLE</div>
+
+                </div>
+            </div>
+            <div id="card-scroll-product" class="relative w-80">
+                <div class="h-56 overflow-hidden rounded-md w-full">
+                    <img src="https://images.unsplash.com/photo-1493663284031-b7e3aefcae8e?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                        class="w-full h-full object-cover" alt="furniture" />
+                </div>
+                <div id="card-contant flex flex-col justify-between">
+                    <div class="flex justify-between my-1">
+                        <p id="item-name">Tesera Centre Table</p>
+                        <div id="amount">&#8377; 283,200.00</div>
+                    </div>
+                    <div class="my-1 text-gray-700 text-sm">By Project 810</div>
+                    <div class="bg-black text-white px-2 w-fit my-1 text-sm">CUSTOMIZABLE</div>
+
+                </div>
+            </div>
+            
+            <div id="card-scroll-product" class="relative w-80">
+                <div class="h-56 overflow-hidden rounded-md w-full">
+                    <img src="https://images.unsplash.com/photo-1493663284031-b7e3aefcae8e?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                        class="w-full h-full object-cover" alt="furniture" />
+                </div>
+                <div id="card-contant flex flex-col justify-between">
+                    <div class="flex justify-between my-1">
+                        <p id="item-name">Tesera Centre Table</p>
+                        <div id="amount">&#8377; 283,200.00</div>
+                    </div>
+                    <div class="my-1 text-gray-700 text-sm">By Project 810</div>
+                    <div class="bg-black text-white px-2 w-fit my-1 text-sm">CUSTOMIZABLE</div>
+
+                </div>
+            </div>
+        </div>
+    </div> -->
+
+   

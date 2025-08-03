@@ -2,25 +2,26 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './pages/home/home.component';
 import { ProductListComponent } from './pages/products/product-list/product-list.component';
-// import { ProductDetailComponent } from './pages/products/product-detail/product-detail.component';
-// import { InteriorServicesComponent } from './pages/interior-services/interior-services.component';
-// import { AboutComponent } from './pages/about/about.component';
-// import { ContactComponent } from './pages/contact/contact.component';
-// import { LoginComponent } from './pages/auth/login.component';
-// import { RegisterComponent } from './pages/auth/register.component';
- import { AddProductComponent } from './pages/admin/add-product/add-product.component';
-// import { UpdateProductComponent } from './pages/admin/update-product.component';
-// import { DeleteProductComponent } from './pages/admin/delete-product.component';
+import { GalerryComponent } from './pages/galerry/galerry.component';
+import { ServiceListComponent } from './pages/services/service-list/service-list.component';
+import { AboutusComponent } from './pages/about/aboutus/aboutus.component';
+import { ContactusComponent } from './pages/contact/contactus/contactus.component';
+import { LoginComponent } from './pages/auth/login/login.component';
+import { RegistrationComponent } from './pages/auth/registration/registration.component';
+import { AddProductComponent } from './pages/admin/add-product/add-product.component';
+import { ProductDetailsComponent } from './pages/products/product-details/product-details.component';
+import { CartComponent } from './pages/cart/cart.component';
 
-export const routes: Routes = [  { path: '', component: HomeComponent },
-  { path: 'products', component: ProductListComponent },
-  // { path: 'products/:id', component: ProductDetailComponent },
-  // { path: 'services', component: InteriorServicesComponent },
-  // { path: 'about', component: AboutComponent },
-  // { path: 'contact', component: ContactComponent },
-  // { path: 'login', component: LoginComponent },
-  // { path: 'register', component: RegisterComponent },
-   { path: 'addProducts', component: AddProductComponent },
-  // { path: 'admin/update-product/:id', component: UpdateProductComponent },
-  // { path: 'admin/delete-product/:id', component: DeleteProductComponent },
+export const routes: Routes = [  
+  { path: '', component: HomeComponent },
+  { path: 'Products', component: ProductListComponent },
+  { path: 'Gallery', component: GalerryComponent },
+  { path: 'Services', component: ServiceListComponent },
+  { path: 'About', component: AboutusComponent },
+  { path: 'Contact', component: ContactusComponent },
+  { path: 'login', component: LoginComponent },
+  { path: 'register', component: RegistrationComponent },
+  { path: 'addProducts', component: AddProductComponent },
+  { path: 'productDetails', component: ProductDetailsComponent },
+  { path: 'Cart', component: CartComponent },
 ];

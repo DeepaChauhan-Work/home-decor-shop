@@ -1,0 +1,284 @@
+
+    <div id="main"  class="font-poppins">
+       
+        <!-- <div id="fixed-bottem" class="fixed bottom-0 bg-white lg:w-9/12 gap-1 py-2 px-5 z-10 rounded-lg">
+            <button id="close-bottem" class="bg-gray-200 w-8 h-8 cursor-pointer rounded-full absolute right-2 top-2"><i
+                    class="fa-solid fa-xmark"></i></button>
+            <div id="bottom-content" class=" w-3/4 flex flex-col gap-1">
+                <p class="font-semibold text-sm text-black">We use cookies to make your experience etter</p>
+                <p class="font-light text-sm text-gray-600">comply with the new e-Privacy directive, we need to ask for
+                    your consent to set the cookies <a href="#" class="font-light text-sm text-gray-600 underline">Learn
+                        more</a></p>
+                <button type="button" id="cookies-btn" class="py-1 px-3 bg-black text-gray-100 w-fit">Allow
+                    Cookies</button>
+            </div>
+        </div> -->
+        <button id="goto-top"
+            class="border rounded-full h-12 w-12 fixed bottom-20 bg-white right-4 border-gray-300 z-20">
+            <i (click)="scrollToTop()" class="fa-solid fa-caret-up text-3xl cursor-pointer text-gray-600"></i>
+        </button>
+        <a href="https://wa.me/919870944489" target="_blank">
+            <div id="message" class="fixed bottom-5 right-5 z-20 flex gap-2 box-border">
+                <button id="message-btn" class="border rounded-full h-14 w-14 border-gray-300 bg-gray-100">
+                    <i class="fa-brands fa-whatsapp text-3xl cursor-pointer text-gray-600"></i>
+                </button>
+            </div>
+        </a>
+        <div id="extra" class="lg:h-20 h-16 bg-white w-full"></div>
+    </div>
+
+<div id="container"
+        class="lg:bg-[url(https://cdn.home-designing.com/wp-content/uploads/2022/12/black-couch-living-room.jpg)] bg-[url(https://images.unsplash.com/photo-1658704277613-1b6a920ddf9e?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D)] bg-center bg-cover h-[80vh] md:h-[90vh] flex justify-center items-center text-left">
+        <div id="main-heading" class="border-white w-3/4 h-3/4 xl:pr-80 lg:pr-60 flex flex-col gap-3 pt-20">
+            <h2 class="font-bold lg:text-[50px] text-2xl sm:text-8xl text-white tracking-widest">Stylish interiors, perfectly tailored to your
+                 <span class="text-yellow-400">taste and budget.</span></h2>
+            <p class="font-semibold lg:text-xl text-md md:text-lg text-white tracking-widest">
+                Experience the Avara Promise: Precision, Quality, and Timeliness.</p>
+        </div>
+    </div>
+    <div class="bg-white w-11/12 m-auto rounded-3xl py-16 sm:py-24">
+        <div class="mx-auto max-w-7xl px-6 lg:px-8">
+            <dl class="grid grid-cols-1 gap-x-8 gap-y-16 text-center lg:grid-cols-3">
+                <div class="mx-auto flex max-w-xs flex-col gap-y-4">
+                    <dt class="text-base/7 text-gray-600">Personalised designs</dt>
+                    <dd class="order-first text-3xl font-semibold tracking-tight text-gray-700 sm:text-5xl"><i
+                            class="fa-solid fa-pen-nib"></i></dd>
+                </div>
+                <div class="mx-auto flex max-w-xs flex-col gap-y-4">
+                    <dt class="text-base/7 text-gray-600">Flat 10-year warranty¹</dt>
+                    <dd class="order-first text-3xl font-semibold tracking-tight text-gray-700 sm:text-5xl"><i
+                            class="fa-solid fa-award"></i></dd>
+                </div>
+                <div class="mx-auto flex max-w-xs flex-col gap-y-4">
+                    <dt class="text-base/7 text-gray-600">Transparent pricing</dt>
+                    <dd class="order-first text-3xl font-semibold tracking-tight text-gray-700 sm:text-5xl"><i
+                            class="fa-solid fa-dollar-sign"></i>
+                    </dd>
+                </div>
+            </dl>
+        </div>
+    </div>
+    <div class="text-center flex flex-col gap-5 py-20 xl:px-52 md:px-32 sm:px-24 px-5 mb-20 relative bg-gray-100">
+        <h3 class="text-3xl font-semibold text-center uppercase md:tracking-wider tracking-wide">The home design you
+            crave</h3>
+        <p>When you give your home the AVARA touch, you get both beauty and functionality. We employ state-of-the-art
+            technology to ensure your home features a flawless look that lasts a very long time.</p>
+        <!-- consultaion-btn -->
+        <button id="consultation-btn" type="submit"
+            class="bg-slate-800 tracking-widest py-3 px-9 w-fit m-auto rounded-2xl font-semibold text-white cursor-pointer">BOOK
+            FREE
+            CONSULTATION</button>
+        <!-- Consultaion form -->
+        <form id="consultation-form"
+            class="hidden max-w-sm mx-auto bg-gray-100 px-5 py-20 rounded absolute w-96 left-1/2 transform -translate-x-1/2 top-1/2 -translate-y-1/2">
+            <div class="mb-5">
+                <label for="email" class="flex justify-start mb-2 text-sm font-medium text-gray-900">Your name</label>
+                <input type="text" id="name"
+                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg block w-full p-2.5"
+                    placeholder="Name" required />
+            </div>
+            <div class="mb-5">
+                <label for="password" class="flex justify-start mb-2 text-sm font-medium text-gray-900">Your
+                    phone number</label>
+                <input type="password" id="password" placeholder="Phone number"
+                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+                    required />
+            </div>
+            <div class="flex items-start mb-5">
+                <div class="flex items-center h-5">
+                    <input id="remember" type="checkbox" value=""
+                        class="w-4 h-4 border border-gray-300 rounded-sm bg-gray-50" required />
+                </div>
+                <label for="remember" class="ms-2 text-sm font-medium text-gray-900">Send me updates on whatsApp</label>
+            </div>
+            <button type="submit"
+                class="text-white bg-slate-800 focus:ring-4 focus:outline-none font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center">Next</button>
+            <button id="consultation-form-close"
+                class="bg-gray-200 w-8 h-8 cursor-pointer rounded-full absolute right-2 top-2"><i
+                    class="fa-solid fa-xmark"></i></button>
+        </form>
+    </div>
+     <div>
+            <h4 class="text-3xl font-semibold uppercase md:tracking-wider tracking-wide text-center">Our services</h4>
+        </div>
+    <section class="px-6 py-5 bg-gradient-to-b from-gray-50 to-gray-100">
+        
+    <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
+
+        <!-- Card 1: Interior Spaces -->
+        <div class="bg-white shadow-lg rounded-2xl p-6 hover:shadow-2xl transition-shadow duration-300">
+        <div class="flex items-center gap-3 mb-4">
+            <svg class="w-7 h-7 text-black" fill="none" stroke="currentColor" stroke-width="1.5"
+            viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path stroke-linecap="round" stroke-linejoin="round"
+                d="M2.25 12l8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-6.375c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75" />
+            </svg>
+            <h3 class="text-2xl font-bold text-gray-800">Interior Spaces (End to End)</h3>
+        </div>
+        <ul class="list-disc pl-5 space-y-4 text-gray-700 text-sm">
+            <li>
+            <h4 class="font-semibold text-base">Residential Interiors (Homes, Flats, Villas)</h4>
+            <p class="text-xs mt-1">Transform your home into a cozy, elegant and personalized space. From bedrooms to modular kitchens — we plan and execute everything that makes a house feel like home.</p>
+            </li>
+            <li>
+            <h4 class="font-semibold text-base">Retail Interiors (Shops, Showrooms)</h4>
+            <p class="text-xs mt-1">Smart layouts that boost sales and elevate your brand presence. Display planning, lighting, and spatial flow designed to engage customers.</p>
+            </li>
+            <li>
+            <h4 class="font-semibold text-base">Commercial Interiors (Offices, Workspaces)</h4>
+            <p class="text-xs mt-1">Productive, modern workspaces that reflect professionalism and comfort. Ergonomic design, smart partitioning, and efficient layouts to improve team performance.</p>
+            </li>
+        </ul>
+        </div>
+
+        <!-- Card 2: Turnkey Solutions -->
+        <div class="bg-white shadow-lg rounded-2xl p-6 hover:shadow-2xl transition-shadow duration-300">
+        <div class="flex items-center gap-3 mb-4">
+            <svg class="w-7 h-7 text-black" fill="none" stroke="currentColor" stroke-width="1.5"
+            viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path stroke-linecap="round" stroke-linejoin="round"
+                d="M6.429 15.857l2.572-2.571m0 0a2 2 0 002.828 0l.286-.285a2 2 0 000-2.828l-1.143-1.143a2 2 0 00-2.828 0l-.285.285a2 2 0 000 2.828zM21 21l-5.2-5.2M18 3a3 3 0 013 3v12a3 3 0 01-3 3H6a3 3 0 01-3-3V6a3 3 0 013-3h12z" />
+            </svg>
+            <h3 class="text-2xl font-bold text-gray-800">Turnkey Interior Solutions</h3>
+        </div>
+        <ul class="list-disc pl-5 space-y-4 text-gray-700 text-sm">
+            <li>
+            <h4 class="font-semibold text-base">Complete project delivery from design to execution</h4>
+            <p class="text-xs mt-1">From the initial design phase to the final handover, we take complete ownership.</p>
+            </li>
+            <li>
+            <h4 class="font-semibold text-base">One-stop solution - no third-party needed</h4>
+            <p class="text-xs mt-1">Our team handles both design and on-site execution without third-party dependency.</p>
+            </li>
+            <li>
+            <h4 class="font-semibold text-base">Design to delivery, all in-house</h4>
+            <p class="text-xs mt-1">Tracking project timelines and ensuring work stays within budget.</p>
+            </li>
+            <li>
+            <h4 class="font-semibold text-base">Hassle-Free Handover</h4>
+            <p class="text-xs mt-1">Fully furnished, ready-to-use space delivered on time.</p>
+            </li>
+            <li>
+            <h4 class="font-semibold text-base">Customized Solutions</h4>
+            <p class="text-xs mt-1">Tailored designs, themes, and furniture that suit the client's lifestyle or business need.</p>
+            </li>
+        </ul>
+        </div>
+
+        <!-- Card 3: Design Consultancy -->
+        <div class="bg-white shadow-lg rounded-2xl p-6 hover:shadow-2xl transition-shadow duration-300">
+        <div class="flex items-center gap-3 mb-4">
+            <svg class="w-7 h-7 text-black" fill="none" stroke="currentColor" stroke-width="1.5"
+            viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path stroke-linecap="round" stroke-linejoin="round"
+                d="M16.862 4.487l1.687-1.687a1.875 1.875 0 112.652 2.652L10.582 16.07a4.5 4.5 0 01-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 011.13-1.897l8.932-8.931z" />
+            </svg>
+            <h3 class="text-2xl font-bold text-gray-800">Design Consultancy</h3>
+        </div>
+        <ul class="list-disc pl-5 space-y-4 text-gray-700 text-sm">
+            <li><h4 class="font-semibold text-base">Space Planning & Layouts</h4><p class="text-xs mt-1">Efficient planning based on user flow, utility, and aesthetics.</p></li>
+            <li><h4 class="font-semibold text-base">3D Views & Visualizations</h4><p class="text-xs mt-1">Realistic renders to help clients visualize the final outcome before execution.</p></li>
+            <li><h4 class="font-semibold text-base">Material & Finish Selection</h4><p class="text-xs mt-1">Recommendations for appropriate materials, textures, colors, and finishes tailored to project type.</p></li>
+            <li><h4 class="font-semibold text-base">Theme & Style Guidance</h4><p class="text-xs mt-1">Whether it's modern, traditional, minimalist, or luxury — we help define the tone of the space.</p></li>
+            <li><h4 class="font-semibold text-base">Furniture & Decor Consultation</h4><p class="text-xs mt-1">Suggestions and specifications for loose furniture, artwork, lighting, and décor elements.</p></li>
+        </ul>
+        </div>
+
+        <!-- Card 4: Project Management -->
+        <div class="bg-white shadow-lg rounded-2xl p-6 hover:shadow-2xl transition-shadow duration-300">
+        <div class="flex items-center gap-3 mb-4">
+            <svg class="w-7 h-7 text-black" fill="none" stroke="currentColor" stroke-width="1.5"
+            viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path stroke-linecap="round" stroke-linejoin="round"
+                d="M9 12h6m-6 4h6M5.25 6a2.25 2.25 0 012.25-2.25h9A2.25 2.25 0 0118.75 6v12A2.25 2.25 0 0116.5 20.25h-9A2.25 2.25 0 015.25 18V6z" />
+            </svg>
+            <h3 class="text-2xl font-bold text-gray-800">Project Management</h3>
+        </div>
+        <ul class="list-disc pl-5 space-y-4 text-gray-700 text-sm">
+            <li><h4 class="font-semibold text-base">Site Coordination & Supervision</h4><p class="text-xs mt-1">Regular site visits and quality checks to ensure design intent is followed.</p></li>
+            <li><h4 class="font-semibold text-base">Vendor & Contractor Coordination</h4><p class="text-xs mt-1">Liaising with carpenters, electricians, painters, and other trades.</p></li>
+            <li><h4 class="font-semibold text-base">Timeline & Budget Management</h4><p class="text-xs mt-1">Tracking project timelines and ensuring work stays within budget.</p></li>
+            <li><h4 class="font-semibold text-base">Procurement Oversight</h4><p class="text-xs mt-1">Coordinating delivery and quality checks of materials and products.</p></li>
+            <li><h4 class="font-semibold text-base">Final Handover & Snag Checks</h4><p class="text-xs mt-1">Ensuring everything is finished to the client's satisfaction, with all snags resolved.</p></li>
+        </ul>
+        </div>
+
+    </div>
+    </section>
+   
+    <div id="card-container" class="lg:mx-14 sm:mx-10 mx-5 flex flex-col gap-10 py-10">
+        <div>
+            <h3 class="text-3xl font-semibold text-center uppercase md:tracking-wider tracking-wide">What we offer</h3>
+        </div>
+        <div id="cards" class="lg:gap-20 gap-10 flex flex-wrap justify-center">
+            <!-- Card -->
+            <div id="card" class="bg-gray-100 py-5 w-80 flex flex-col gap-7 rounded-xl h-[500px]">
+                <div class="flex gap-3 text-2xl font-semibold px-5">
+                    <div id="image"><i class="fa-solid fa-house-circle-check"></i></div>
+                    <p>Our services</p>
+                </div>
+                <ul class="flex flex-col gap-3 list-disc px-5 text-gray-600 font-semibold">
+                    <li>Modular kitchens</li>
+                    <li>Modular Wardrobes</li>
+                    <li>Lighting</li>
+                    <li>Flooring</li>
+                    <li>Electrical work</li>
+                    <li>Civil work</li>
+                    <li>False ceiling</li>
+                    <li>Wall design & painting</li>
+                </ul>
+            </div>
+            <!-- Card -->
+            <div id="card" class="bg-gray-100 py-10 w-80 flex flex-col gap-7 rounded-xl h-[500px]">
+                <div class="flex gap-3 text-2xl font-semibold px-5">
+                    <div id="image"><i class="fa-solid fa-award"></i></div>
+                    <p>Warranty</p>
+                </div>
+                <ul class="flex flex-col gap-3 list-disc px-10 text-gray-600 font-semibold">
+                    <li>FLAT 10-year warranty¹ - Stay worry-free with our warranty policy on modular products.</li>
+                    <li>Up to 1-year on-site service warranty¹ - Warranty on on-site services such as painting,
+                        electrical, plumbing and more.</li>
+
+                </ul>
+            </div>
+            <!-- Card -->
+            <div id="card" class="bg-gray-100 py-10 w-80 flex flex-col gap-7 rounded-xl h-[500px]">
+                <div class="flex gap-3 text-2xl font-semibold px-5">
+                    <div id="image"><i class="fa-solid fa-lightbulb"></i></div>
+                    <p>Technology & science</p>
+                </div>
+                <ul class="flex flex-col gap-3 list-disc px-10 text-gray-600 font-semibold">
+                    <li>AquaBloc® Technology - Hermetically sealed edges that ensure no moisture enters the panels of
+                        your modular cabinets.</li>
+                    <li>AntiBubble® Technology - Super seamless panels without air bubbles for your modular cabinets.
+                    </li>
+                    <li>DuraBuild™ Technology - Robust structure for modular cabinets, making them strong.</li>
+                </ul>
+            </div>
+
+
+        </div>
+    </div>
+    <!-- <div class="text-center flex flex-col gap-10 py-5 sm:py-24">
+        <h1 class=" text-3xl font-semibold uppercase md:tracking-wider tracking-wide">Let our numbers do the talking!
+        </h1>
+        <div class="flex justify-around bg-white w-11/12 m-auto rounded-3xl">
+            <div>
+                <h4 class="text-3xl font-semibold text-gray-600">100 +</h4>
+                <p>#AvaraHomes</p>
+            </div>
+            <div>
+                <h4 class="text-3xl font-semibold text-gray-600">10 +</h4>
+                <p>designers</p>
+            </div>
+            <div>
+                <h4 class="text-3xl font-semibold text-gray-600">1 +</h4>
+                <p>cities</p>
+            </div>
+            <div class="hidden sm:block">
+                <h4 class="text-3xl font-semibold text-gray-600">1</h4>
+                <p>countries</p>
+            </div>
+        </div>
+    </div> -->
+

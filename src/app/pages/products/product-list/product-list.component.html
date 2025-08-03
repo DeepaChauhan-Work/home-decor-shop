@@ -1,13 +1,77 @@
-<div class="row">
-  <div class="col-md-4 mb-3" *ngFor="let product of products">
-    <div class="card">
-      <img [src]="product.imageUrl" class="card-img-top" alt="{{product.name}}">
-      <div class="card-body">
-        <h5 class="card-title">{{product.name}}</h5>
-        <p class="card-text">{{product.description}}</p>
-        <p><strong>${{product.price}}</strong></p>
-        <a [routerLink]="['/products', product.id]" class="btn btn-sm btn-primary">View</a>
-      </div>
+
+    <div id="main" class="font-poppins">
+
+        <!-- <div id="fixed-bottem" class="fixed bottom-0 bg-white lg:w-9/12 gap-1 py-2 px-5 z-10 rounded-lg">
+            <button id="close-bottem" class="bg-gray-200 w-8 h-8 cursor-pointer rounded-full absolute right-2 top-2"><i
+                    class="fa-solid fa-xmark"></i></button>
+            <div id="bottom-content" class=" w-3/4 flex flex-col gap-1">
+                <p class="font-semibold text-sm text-black">We use cookies to make your experience etter</p>
+                <p class="font-light text-sm text-gray-600">comply with the new e-Privacy directive, we need to ask for
+                    your consent to set the cookies <a href="#" class="font-light text-sm text-gray-600 underline">Learn
+                        more</a></p>
+                <button type="button" id="cookies-btn" class="py-1 px-3 bg-black text-gray-100 w-fit">Allow
+                    Cookies</button>
+            </div>
+        </div> -->
+        <button id="goto-top"
+            class="border rounded-full h-12 w-12 fixed bottom-20 bg-white right-4 border-gray-300 z-20">
+            <i (click)="scrollToTop()" class="fa-solid fa-caret-up text-3xl cursor-pointer text-gray-600"></i>
+        </button>
+        <a href="https://wa.me/919870944489" target="_blank">
+            <div id="message" class="fixed bottom-5 right-5 z-20 flex gap-2 box-border">
+                <button id="message-btn" class="border rounded-full h-14 w-14 border-gray-300 bg-gray-100">
+                    <i class="fa-brands fa-whatsapp text-3xl cursor-pointer text-gray-600"></i>
+                </button>
+            </div>
+        </a>
+        <div id="extra" class="lg:h-20 h-16 bg-white w-full"></div>
+        <div id="container">
+        <div id="image" class=""><img class="w-screen"
+                src="https://images.unsplash.com/photo-1618221469555-7f3ad97540d6?q=80&w=1332&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                alt="">
+        </div>
     </div>
-  </div>
-</div>
+        <div id="filter-sepration"
+            class="flex sm:flex-row flex-col gap-5 border-t border-b sm:my-10 my-5 lg:mx-24 mx-16 sm:py-5 py-3 justify-between border-gray-300">
+            <div id="filter" class="flex items-center gap-3">
+                <i class="fa-solid fa-filter-circle-xmark cursor-pointer"></i>
+                <div>Filter</div>
+            </div>
+            <div id="sort">
+                <label for="position">Sort By: </label>
+                <select [(ngModel)]="selectedFilter" (change)="filterProducts()" name="position" id="position" class="border outline-none p-2 border-gray-300 ml-4">
+                    <option value="Select Filter">Select Filter</option>
+                    <option value="lowToHigh">Price - Low to High</option>
+                    <option value="highToLow">Price - High to Low</option>
+                </select>
+            </div>
+        </div>
+        <div id="card-container" class="mx-14 gap-20 justify-center flex flex-wrap mb-12">
+            <!-- Card -->
+            <div id="cards1" class="md:gap-20 gap-10 flex flex-col md:flex-row flex-wrap pt-0 border-gray-200 pl-3 justify-center items-center">
+
+            <a *ngFor="let product of products" >
+                <div id="card-scroll-product" class="relative w-80">
+                <div (click)="GoToProductDetails(product)" class="w-full h-56 overflow-hidden rounded-md cursor-pointer">
+                                        <img src="https://images.unsplash.com/photo-1493663284031-b7e3aefcae8e?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                                            class="w-full h-full object-cover" alt="furniture" />
+                    </div>
+                <div class="flex flex-col justify-between mt-2">
+                    <div class="flex justify-between my-1">
+                    <p id="item-name" class="font-poppins font-semibold">{{ product.ProductName }}</p>
+                    <div id="amount" class="font-poppins font-semibold">&#8377; {{ product.Price | number:'1.0-0' }}</div>
+                    </div>
+                    <div class="my-1 text-gray-500 text-sm font-poppins font-semibold">Type: {{ product.Category }}</div>
+                    <div *ngIf="product.CUSTOMIZABLE"
+                        class="bg-black text-white px-2 w-fit my-1 text-sm">
+                    CUSTOMIZABLE
+                    </div>
+                    <button type="submit" class="py-1 px-3 border bg-slate-800 tracking-widest hover:bg-slate-900 transition-all ease-in-out duration-100 absolute right-0 bottom-0 text-white rounded-md cursor-pointer"
+                    (click)="AddToCart(product)">
+                        Add to cart</button>
+                </div>
+                </div>
+            </a>
+            </div>
+        </div>
+    </div>

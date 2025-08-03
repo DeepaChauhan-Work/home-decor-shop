@@ -1,9 +1,8 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { ProductService } from '../../../core/services/product.service';
 import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule } from '@angular/forms';
-
+import { ProductTransferService } from '../../interior-services/products.services';
 @Component({
   selector: 'app-add-product',
   standalone: true,
@@ -15,13 +14,17 @@ export class AddProductComponent {
   productForm: FormGroup;
   imagePreview: string | null = null;
 
-  constructor(private fb: FormBuilder, private productService: ProductService) {
+  constructor(private fb: FormBuilder, private transferService: ProductTransferService) {
     this.productForm = this.fb.group({
-      productName: ['', Validators.required],
-      category: ['', Validators.required],
-      price: [0, [Validators.required, Validators.min(0)]],
-      description: ['', Validators.required],
-      imageUrl: ['']
+      ProductName: ['', Validators.required],
+      Category: ['', Validators.required],
+      Price: [0, [Validators.required, Validators.min(0)]],
+      Description: ['', Validators.required],
+      Material: ['', Validators.required],
+      Height: ['', Validators.required],
+      Width: ['', Validators.required],
+      CUSTOMIZABLE: ['', Validators.required],
+      Image: ['']
     });
   }
 
@@ -39,10 +42,12 @@ export class AddProductComponent {
 
   onSubmit() {
     if (this.productForm.valid) {
-      this.productService.addProduct(this.productForm.value);
+
+      console.log(this.productForm.value);
+      this.transferService.addProduct(this.productForm.value);
       alert('Product added successfully!');
       this.productForm.reset();
-      this.imagePreview = null;
+      //this.imagePreview = null;
     } else {
       alert('Please fill in all required fields correctly.');
     }

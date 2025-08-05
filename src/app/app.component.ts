@@ -12,6 +12,7 @@ import { ProductTransferService } from '../app/pages/interior-services/products.
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
+  isMobileMenuOpen:boolean=false;
   title = 'home-decor-shop';
   loggedInUser: User | null = null;
   navLinks: any[] = [];
@@ -64,5 +65,12 @@ export class AppComponent implements OnInit {
     this.loggedInUser = null;
     alert("Logout successful! ");
     this.router.navigate(['/']); // 👈 Optional: redirect to home
+  }
+  ToggleMenuPhone() {
+    this.isMobileMenuOpen = !this.isMobileMenuOpen;
+  }
+
+  closeMenuPhone() {
+    this.isMobileMenuOpen = false;
   }
 }

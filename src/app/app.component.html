@@ -1,65 +1,77 @@
 
 <header class="fixed w-full z-10">
-            <div id="nav" class="flex items-center justify-between lg:px-14 sm:px-10 px-5 bg-white font-poppins">
-                <div class="flex gap-3 items-end">
-                    <div id="hemburger" class="md:hidden">
-                        <i class="fa-solid fa-bars-staggered text-2xl opacity-60 hover:opacity-90 cursor-pointer"></i>
-                    </div>
-                    <!-- <div  id="search" class="hidden md:flex">
-                        
-                         <div class="pl-2"  style="margin-right: 18%;">Welcome <span *ngIf="loggedInUser">{{loggedInUser.email.split('@')[0]}}</span></div>
-                    </div> -->
-                 
-                </div>
-                <div id="logo" class="md:pr-40" style="margin-left: 20%;">
-                    <img class="w-24" src="assets/AVARA_LOGO_YESHWANTH_02.png" alt="">
-                </div>
-                <div id="login" class="flex gap-3">
-                    <a routerLink='/login' aria-label="login"><i
-                            class="fa-regular fa-user text-xl opacity-60 hover:opacity-90 cursor-pointer"></i></a>
-                    <a routerLink='/Cart'>
-                        <div class="relative">
-                            <i class="fa-brands fa-opencart text-xl opacity-60 hover:opacity-90 cursor-pointer"></i>
-                            <div
-                                class="bg-slate-700 text-white px-1 py-0.3 flex justify-center items-center rounded-full tracking-widest absolute -top-2 -right-2 text-xs">
-                                {{cartCount}}</div>
-                        </div>
-                    </a>
-                    <a>
-                    <i 
-                    class="fa-solid fa-right-from-bracket text-xl opacity-60 hover:opacity-90 cursor-pointer ml-4" 
-                    title="Logout" 
-                    (click)="logout()">
-                    </i>
-                    </a>
-                   
-                </div>
-            </div>
+  <!-- Navbar -->
+  <div class="flex items-center justify-between lg:px-14 sm:px-10 px-5 bg-white font-poppins">
+    <div class="flex gap-3 items-end">
+      <!-- Hamburger Menu Button (Mobile Only) -->
+      <div class="lg:hidden">
+        <button (click)="ToggleMenuPhone()">
+          <i class="fa-solid fa-bars-staggered text-2xl opacity-60 hover:opacity-90 cursor-pointer"></i>
+        </button>
+      </div>
+    </div>
 
-           <div id="mobile-menu" class="hidden w-full border flex-col bg-white gap-2 text-sm font-light py-2 transition-all duration-300 ease-in-out font-poppins">
-                <a
-                    *ngFor="let link of navLinks"
-                    [routerLink]="link.path"
-                    routerLinkActive="text-red-700"
-                    [routerLinkActiveOptions]="{ exact: true }">
-                    {{ link.label }}
-                </a>
-            </div>
+    <!-- Logo -->
+    <div class="md:pr-40" style="margin-left: 20%;">
+      <img class="w-24" src="assets/AVARA_LOGO_YESHWANTH_02.png" alt="Avara Logo" />
+    </div>
 
+    <!-- Login / Cart / Logout Icons -->
+    <div class="flex gap-3 items-center">
+      <a routerLink='/login' aria-label="login">
+        <i class="fa-regular fa-user text-xl opacity-60 hover:opacity-90 cursor-pointer"></i>
+      </a>
+      <a routerLink='/Cart'>
+        <div class="relative">
+          <i class="fa-brands fa-opencart text-xl opacity-60 hover:opacity-90 cursor-pointer"></i>
+          <div class="bg-slate-700 text-white px-1 py-0.5 rounded-full absolute -top-2 -right-2 text-xs">
+            {{ cartCount }}
+          </div>
+        </div>
+      </a>
+      <i
+        class="fa-solid fa-right-from-bracket text-xl opacity-60 hover:opacity-90 cursor-pointer ml-4"
+        title="Logout"
+        (click)="logout()"
+      ></i>
+    </div>
+  </div>
 
-            <div id="nav2"
-                class="border border-gray-300 lg:flex hidden items-center justify-between px-30 py-2.5 bg-white font-poppins">
+  <!-- Mobile Menu (Toggled) -->
+  <div
+    id="mobile-menu"
+    class="w-full flex-col bg-white gap-2 text-sm font-light py-2 transition-all duration-300 ease-in-out font-poppins lg:hidden"
+    [class.hidden]="!isMobileMenuOpen"
+  >
+    <a
+      class="nav-link border border-transparent inline-block w-full py-2 px-4 hover:border-gray-300 font-bold opacity-80 hover:opacity-100"
+      *ngFor="let link of navLinks"
+      [routerLink]="link.path"
+      routerLinkActive="text-red-700"
+      [routerLinkActiveOptions]="{ exact: true }"
+      (click)="closeMenuPhone()"
+    >
+      {{ link.label }}
+    </a>
+  </div>
 
-                  <a class="font-bold opacity-80 hover:opacity-100"
-                    *ngFor="let link of navLinks"
-                    [routerLink]="link.path"
-                    routerLinkActive="text-red-700"
-                    [routerLinkActiveOptions]="{ exact: true }"
-                    class="font-bold opacity-80 hover:opacity-100">
-                    {{ link.label }}
-                </a>
-            </div>
-        </header>
+  <!-- Desktop Menu -->
+  <div
+    id="nav2"
+    class="border border-gray-300 hidden lg:flex items-center justify-center gap-25 px-10 py-2.5 bg-white font-poppins"
+  >
+    <a
+      *ngFor="let link of navLinks"
+      [routerLink]="link.path"
+      routerLinkActive="text-red-700"
+      [routerLinkActiveOptions]="{ exact: true }"
+      class="font-bold opacity-80 hover:opacity-100 px-4"
+    >
+      {{ link.label }}
+    </a>
+  </div>
+</header>
+
 
 <main class="flex-fill">
   <router-outlet></router-outlet>
